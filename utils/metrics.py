@@ -54,9 +54,8 @@ def aucroc(probs, labels):
 
 
 if __name__ == '__main__':
-
-    num_classes = 4
+    num_classes = 2
     probs = torch.randn(size=(1000,num_classes))
     probs = F.softmax(probs, dim=-1)
     labels = torch.multinomial(probs, num_samples=1).squeeze() * 0
-    print("Metrics", standard_metrics(probs, labels))
+    print("Metrics", standard_metrics(probs[:, 1], labels))
