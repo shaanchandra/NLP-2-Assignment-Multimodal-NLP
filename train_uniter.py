@@ -175,8 +175,8 @@ class TrainerUniter():
         with torch.no_grad():
             for iters, batch in enumerate(batch_loader):
                 batch = self.batch_to_device(batch)
-                if batch_loader.dataset.return_ids:
-                    self.id_list.append(batch['ids'])
+                # if batch_loader.dataset.return_ids:
+                self.id_list.append(batch['ids'])
                 self.eval_iter_step(iters, batch, test=test)
 
             self.probs_list = [prob for batch_prob in self.probs_list for prob in batch_prob]
@@ -199,7 +199,7 @@ class TrainerUniter():
 
         ## Step 2: Run model on the test set (no loss!)
         # Ensure that ids are actually returned
-        assert self.config['test_loader'][test_idx].dataset.return_ids, "Can only export test results if the IDs are returned in the test dataset." 
+        # assert self.config['test_loader'][test_idx].dataset.return_ids, "Can only export test results if the IDs are returned in the test dataset." 
         test_name = self.config['test_loader'][test_idx].dataset.name
         
         prob_list = []
