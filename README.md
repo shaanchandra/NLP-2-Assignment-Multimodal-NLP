@@ -6,7 +6,8 @@ This is the official repository for the Assignment on Multimodal NLP for the MS 
 - Create a virtual environment with Python 3.7.5 using either `virtualenv` or `conda`.
 - Activate the virtual environment.
 - Install the required packages using `pip install -r requirements.txt`. 
-- Install pytorch 1.6.0 with Cuda 10.1 using `conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.1 -c pytorch` or `pip install torch==1.6.0+cu101 torchvision==0.7.0+cu101 -f https://download.pytorch.org/whl/torch_stable.html`
+- Install pytorch 1.7.1 with Cuda 11.0 using `pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+`
 - Install Nvidia Apex as follows:
 ```bash
 git clone https://github.com/NVIDIA/apex
